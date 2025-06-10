@@ -25,7 +25,9 @@ function find(){
                     // console.log(val)
                     document.getElementById("result").innerHTML="<strong>Place </strong>"+val.name+"<br><strong>Weather </strong>"+val.weather[0].main+"<br><strong>Description </strong>"+val.weather[0].description;
                 })
+                .catch(err => console.log("Error:", err));
         })
+        .catch(err => console.log("Error:", err));
     
     document.getElementById("place").value="";
 }
