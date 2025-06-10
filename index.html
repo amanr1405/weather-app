@@ -13,13 +13,17 @@
 <body>
     <div class="master">
         <div class="master_block_A">
-            <form action="">
-                <input type="text">
-                <button><i class="fa-solid fa-magnifying-glass-location"></i></button>
+            <form>
+                <input type="text" id="place">
+                <button class="image" type="button" onclick="find()"></button>
             </form>
-            hii
+            <p id="result"></p>
         </div>
-        <div class="master_block_B"></div>
+        <div class="master_block_B">
+            <p id="lan"></p>
+            <p id="lat"></p>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

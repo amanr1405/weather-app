@@ -50,8 +50,21 @@ form{
     gap: 5px;
 }
 
-input{
-    width: 100%;
+.image{
+  background-image: url("src/location.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+  padding: 15px; 
+  height: auto;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
 }
 
 input:focus{
@@ -59,24 +72,12 @@ input:focus{
     color: #c1c1c1;
 }
 
-button:focus{
-    background: #0eafed;
-}
-
-input, button{
-    border-radius: 4px;
+input{
+    width: 100%;
+    border-radius: 40px 0px 0px 40px;
     border: 5px;
     outline: none;
     padding: 10px;
-}
-
-button:hover{
-    cursor: pointer;
-    background: #c1c1c1;
-}
-
-i{
-    transform: scale(1.5);
 }
 
 @media screen and (max-width: 768px){
