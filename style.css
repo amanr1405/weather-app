@@ -124,6 +124,19 @@ a:hover{
     height: 100%;
 }
 
+.air_count1 h5{
+    padding: 20px;
+}
+
+.air_count1{
+    border: 2px solid #202b3b;
+    background-color: #0b131e;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .air_layout{
     display: flex;
     justify-content: space-around;
@@ -153,7 +166,7 @@ a:hover{
     background: url(sunrise.jpg);
     background-size: cover;
     background-position: bottom;
-    border-radius: 25px;
+    border-radius: 20px;
     background-repeat: no-repeat;
     display: flex;
     padding: 10px;
@@ -165,7 +178,7 @@ a:hover{
     background: url(sunset.jpg);
     background-size: cover;
     background-position: center;
-    border-radius: 25px;
+    border-radius: 20px;
     background-repeat: no-repeat;
     display: flex;
     padding: 10px;
@@ -242,7 +255,14 @@ hr{
         justify-content: space-evenly;
     }
     
-    hr{
+    .hr_style1{
+        display: block;
+        width: 100%;
+        border-radius: 50px;
+        border: 1.5px solid #202b3b;
+    }
+
+    .hr_style2{
         display: block;
         width: 100%;
         margin-left: auto;
