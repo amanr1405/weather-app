@@ -1,29 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Application</title>
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Pacifico&family=Poetsen+One&family=Tiny5&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>weather application</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Alatsi&family=Jaro:opsz@6..72&family=Lexend:wght@100..900&family=Pacifico&family=Poetsen+One&family=Tiny5&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="master">
-        <div class="master_block_A">
-            <form>
-                <input type="text" id="place">
-                <button class="image" type="button" onclick="find()"></button>
-            </form>
-            <p id="result"></p>
-        </div>
-        <div class="master_block_B">
-            <p id="lan"></p>
-            <p id="lat"></p>
-        </div>
+  <div class="master_container">
+    <div class="container_A">
+    <div class="form_items">
+      <a href="https://portfolio-aman-seven.vercel.app/">Home</a>
+      <form class="search-container" action="#">
+        <input type="text" placeholder="Search here..." name="search" id="place">
+        <button type="submit" onclick="locate()"><i class="fa fa-search"></i></button>
+      </form>
     </div>
-    <script src="script.js"></script>
+        
+      <div class="container_A_sub">
+        <div class="container_A_sub_A">
+          <h1 class="place">Place</h1>
+          <p class="chance_of_rain">Feels alike</p>
+          <h1 class="temp">31<sup>o</sup></h1>
+        </div>
+        <div class="container_A_sub_B">
+          <img src="weather icons/day.svg" alt="display status">
+        </div>
+      </div>
+
+      <div class="forecast">
+        <div class="forecast_A">
+          <h5>Today Forecast</h5>
+        </div>
+        <div class="forcast_B">
+          <div class="forecast_B_section">
+            <div class="forecast_B_section_day">
+              <img src="weather icons/cloudy.svg" alt="display status" class="img_status">
+              <p>Min. Temp</p>
+            </div>
+            <div class="forecast_B_section_night">
+              <img src="weather icons/cloudy.svg" alt="display status" class="img_status">
+              <p>Max Temp</p>
+            </div>
+            <div class="forecast_B_section_even">
+              <img src="weather icons/cloudy.svg" alt="display status" class="img_status">
+              <p>Sea Level</p>
+            </div>
+            <div class="forecast_B_section_morn">
+              <img src="weather icons/cloudy.svg" alt="display status" class="img_status">
+              <p>Ground Level</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="quote">
+        <h5>Quotes</h5>
+        <hr class="size">
+        <p class="quote_result">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellat perspiciatis a blanditiis. Corrupti, voluptate?</p>
+      </div>
+      
+    </div>
+    <div class="container_B">
+      <div class="sun">
+        <div class="sunrise">
+          <div class="sunrise_subb">
+            <h3>sunrise</h3>
+            <p>5:30</p>
+          </div>
+          <div class="sunrise_suba">
+            <img src="src/clear-day.svg" alt="display status">
+          </div>
+          
+        </div>
+
+        <hr>
+
+        <div class="sunset">
+           <div class="sunset_subb">
+            <h3>sunrise</h3>
+            <p>6:30</p>
+          </div>
+          <div class="sunset_suba">
+            <img src="src/clear-day.svg" alt="display status">
+          </div>
+         
+        </div>
+      </div>
+
+      <div class="air_count">
+        <h5>Air Conditions</h5>
+          <div class="air_layout">
+            <div class="air_count_section1">
+              <div class="air_count_section_sub_a">
+                <img src="src/clear-day.svg" alt="display status">
+              </div>
+              <div class="air_count_section_sub_b">
+                <h3>Real Feel</h3>
+                <p>30<sup>o</sup></p>
+              </div>
+            </div>
+      
+          <div class="air_count_section2">
+            <div class="air_count_section_sub_a">
+              <img src="src/clear-day.svg" alt="display status">
+            </div>
+            <div class="air_count_section_sub_b">
+              <h3>Wind Speed</h3>
+              <p>30%</p>
+            </div>
+          </div>
+        </div>  
+      </div>
+
+      <div class="air_count">
+        <h5>Moisture Conditions</h5>
+          <div class="air_layout">
+            <div class="air_count_section1">
+              <div class="air_count_section_sub_a">
+                <img src="src/clear-day.svg" alt="display status">
+              </div>
+              <div class="air_count_section_sub_b">
+                <h3>Humidity</h3>
+                <p>30<sup>o</sup></p>
+              </div>
+            </div>
+      
+          <div class="air_count_section2">
+            <div class="air_count_section_sub_a">
+              <img src="src/clear-day.svg" alt="display status">
+            </div>
+            <div class="air_count_section_sub_b">
+              <h3>Pressure</h3>
+              <p>30%</p>
+            </div>
+          </div>
+        </div>  
+      </div>
+
+
+    </div>
+  </div>
 </body>
 </html>

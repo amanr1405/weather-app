@@ -12,9 +12,7 @@ function find(){
             const latitude=data[0].lat;
             const longitude=data[0].lon;
             // console.log(data);
-            document.getElementById("lan").innerHTML="<strong>Latitude </strong>"+latitude;
-            document.getElementById("lat").innerHTML="<strong>Longitude </strong>"+longitude;
-
+            document.getElementById("result").innerHTML=data[0].name;
             var weather_api="https://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&appid="+key;
             fetch(weather_api).then(function(get_data)
                 {
@@ -22,8 +20,18 @@ function find(){
                 })
                 .then(function(val)
                 {
-                    // console.log(val)
-                    document.getElementById("result").innerHTML="<strong>Place </strong>"+val.name+"<br><strong>Weather </strong>"+val.weather[0].main+"<br><strong>Description </strong>"+val.weather[0].description;
+                    console.log(val)
+                    document.getElementById("state").innerHTML=val.name;
+                    const quote="https://dummyjson.com/quotes"
+                    fetch(quote).then(function(get_quotes)
+                        {
+                            return get_quotes.json();
+                        })
+                        .then(function(ans_quote){
+                            // console.log(ans_quote)
+                            let random_quote=Math.floor(Math.random() * 10);
+                            document.getElementById("quote").innerHTML=ans_quote.quotes[random_quote].quote+"<br><br>"+"- "+ans_quote.quotes[random_quote].author;
+                        })
                 })
                 .catch(err => console.log("Error:", err));
         })
@@ -31,3 +39,4 @@ function find(){
     
     document.getElementById("place").value="";
 }
+

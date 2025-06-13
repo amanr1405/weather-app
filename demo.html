@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="press()">click</button>
+    <script>
+        function press(){
+
+            
+            fetch('https://pro.openweathermap.org/data/2.5/forecast/climate?lat=35&lon=139&appid=353c71c729022ee7eb2c89bda7e1a853')
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.error(err));
+
+        }
+    </script>
+</body>
+</html>
