@@ -272,4 +272,7 @@ hr{
     .forecast_B_section{
         text-align: center;
     }
-}
+
+    .forecast_B_section p{
+        font-size: 0.8rem;
+    }
