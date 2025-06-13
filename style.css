@@ -11,6 +11,7 @@
 .img_status{
     width: 50px;
 }
+
 html{
   background-color: #0b131e;
 }
@@ -212,6 +213,10 @@ hr{
 @media screen and (max-width: 768px){
     .master_container{
         flex-direction: column;
+    }
+
+    .img_status{
+        transform: scale(0.8);
     }
 
     .container_A, .container_B{
