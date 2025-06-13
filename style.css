@@ -231,4 +231,15 @@ hr{
     .container_A_sub img{
         width: 50px;
     }
+
+    .air_layout{
+        flex-direction: column;
+    }
+
+    .air_count_section1, .air_count_section2{
+        padding: 20px;
+        justify-content: space-between;
+        text-align: right;
+    }
+
 }
