@@ -182,9 +182,7 @@ a:hover{
 }
 
 hr{
-    width: 60%;
-    border-radius: 10px;
-    border: 2px solid #f5f4f3;
+    display: none;
 }
 
 .sunrise img, .sunset img{
@@ -200,10 +198,6 @@ hr{
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-.size{
-    width: 30%;
 }
 
 .form_items{
@@ -242,4 +236,20 @@ hr{
         text-align: right;
     }
 
+    .air_count_section_sub_b{   
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    hr{
+        display: block;
+        width: 100%;
+        margin-left: auto;
+        border: 2px solid #0b131e;
+    }
+
+    .forecast_B_section{
+        text-align: center;
+    }
 }
