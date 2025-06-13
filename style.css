@@ -237,7 +237,7 @@ hr{
     }
 
     .air_count_section1, .air_count_section2{
-        padding: 20px;
+        padding: 0px 20px 0px 20px;
         justify-content: space-between;
         text-align: right;
     }
