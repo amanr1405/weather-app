@@ -80,12 +80,13 @@ a:hover{
 .container_A_sub{
     display: flex;
     padding: 30px;
-    justify-content: space-between;
+    gap: 50%;
+    align-items: center;
 }
 
 .container_A_sub_B img{
     padding-top: 20px ;
-    transform: scale(3.8);
+    transform: scale(4);
 }
 
 .forecast{
