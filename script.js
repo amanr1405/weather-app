@@ -21,7 +21,7 @@ function locate(){
         //display feel like temp
         var temp = parseFloat(weather_data.main.feels_like);
         var temp_result = temp-273;
-        document.getElementById("feels_alike").innerHTML="Feels alike "+temp_result.toFixed(1)+"<sup>o</sup>C";
+        document.getElementById("feels_alike").innerHTML="Feels a like "+temp_result.toFixed(1)+"<sup>o</sup>C";
 
         //display original temp
         var org_temp = parseFloat(weather_data.main.temp);
