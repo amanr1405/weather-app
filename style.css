@@ -177,7 +177,7 @@ a:hover{
     height: 150px;
     background: url(src/sunset.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     border-radius: 20px;
     background-repeat: no-repeat;
     display: flex;
