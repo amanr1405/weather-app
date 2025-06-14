@@ -83,6 +83,26 @@ function locate(){
 
         //pressure
         document.getElementById("pressure").innerHTML = weather_data.main.pressure+" hPa";
+
+
+        //pic changer
+        const pic_desc=weather_data.weather[0].description.toLowerCase();
+        if(pic_desc.includes("cloud")){
+            document.getElementById("main_pic").src="src/clouds.svg";
+        }
+        else if(pic_desc.includes("clear")){
+            document.getElementById("main_pic").src="src/clear-sky.svg";
+        }
+        else if(pic_desc.includes("rain")){
+            document.getElementById("main_pic").src="src/rain.svg";
+        }
+        else if(pic_desc.includes("snow")){
+            document.getElementById("main_pic").src="src/snow.svg";
+        }
+        else{
+            document.getElementById("main_pic").src="src/else.svg";
+        }
+
     })
     .catch(error => {
         console.error("API error:", error);
