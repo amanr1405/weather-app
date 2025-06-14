@@ -1,42 +1,64 @@
-// function locate(){
-//     // find.preventDefault();
-//     const key="353c71c729022ee7eb2c89bda7e1a853";
-//     var p = document.getElementById("place").value;
-//     var api = "http://api.openweathermap.org/geo/1.0/direct?q="+p+"&appid="+key;
-//     fetch(api).then(function(response)
-//         {
-//             return response.json();
-//         })
-//         .then(function(data)
-//         {
-//             const latitude=data[0].lat;
-//             const longitude=data[0].lon;
-//             // console.log(data);
-//             document.getElementById("result").innerHTML=data[0].name;
-//             var weather_api="https://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&appid="+key;
-//             fetch(weather_api).then(function(get_data)
-//                 {
-//                     return get_data.json();
-//                 })
-//                 .then(function(val)
-//                 {
-//                     console.log(val)
-//                     document.getElementById("state").innerHTML=val.name;
-//                     const quote="https://dummyjson.com/quotes"
-//                     fetch(quote).then(function(get_quotes)
-//                         {
-//                             return get_quotes.json();
-//                         })
-//                         .then(function(ans_quote){
-//                             // console.log(ans_quote)
-//                             let random_quote=Math.floor(Math.random() * 10);
-//                             document.getElementById("quote").innerHTML=ans_quote.quotes[random_quote].quote+"<br><br>"+"- "+ans_quote.quotes[random_quote].author;
-//                         })
-//                 })
-//                 .catch(err => console.log("Error:", err));
-//         })
-//         .catch(err => console.log("Error:", err));
-    
-//     document.getElementById("place").value="";
-// }
+function locate(){
+    const key="353c71c729022ee7eb2c89bda7e1a853";
 
+    const place = document.getElementById("place").value;
+    
+    const api = "https://api.openweathermap.org/data/2.5/weather?q="+place+"&appid="+key;
+
+    const quote_api="https://dummyjson.com/quotes"
+    
+    Promise.all([
+        fetch(api),
+        fetch(quote_api)
+    ])
+    .then(async ([response1,response2])=>{
+        const weather_data= await response1.json();
+        const quote_data= await response2.json();
+      
+        console.log(weather_data);
+        document.getElementById("place_name").innerHTML=weather_data.name;
+        
+        //display feel like temp
+        var temp = parseFloat(weather_data.main.feels_like);
+        var temp_result = temp-273;
+        document.getElementById("feels_alike").innerHTML="Feels alike "+temp_result.toFixed(1)+"<sup>o</sup>C";
+
+        //display original temp
+        var org_temp = parseFloat(weather_data.main.temp);
+        var org_temp_result = org_temp-273;
+        document.getElementById("original_temp").innerHTML=org_temp_result.toFixed(1)+"<sup>o</sup>C";
+
+        //display max_temp
+        var max_temp = parseFloat(weather_data.main.temp_max);
+        var max_temp_res = temp-273;
+        document.getElementById("max_temp").innerHTML=max_temp_res.toFixed(1)+"<sup>o</sup>C";
+
+        //display min_temp
+        var min_temp = parseFloat(weather_data.main.temp_min);
+        var min_temp_res = temp-273;
+        document.getElementById("max_temp").innerHTML=min_temp_res.toFixed(1)+"<sup>o</sup>C";
+
+        //display sea_level
+        document.getElementById("sea_level").innerHTML=weather_data.main.sea_level+" hPa";
+
+        //display ground_level
+        document.getElementById("ground_level").innerHTML=weather_data.main.grnd_level+" hPa";
+    
+        //quote_data.quotes[].quote
+        var quote_random_val = Math.floor(Math.random() * 31);
+        document.getElementById("quote_result").innerHTML=quote_data.quotes[quote_random_val].quote + " — " +quote_data.quotes[quote_random_val].author;
+    
+        //display sunrise
+        const sunrise=weather_data.sys.sunrise;
+        
+        const sunrise_date = new Date(sunrise * 1000);
+        console.log(sunrise_data);
+        const sunrise_hrs = sunrise_date.getHours();
+        const sunrise_min = sunrise_date.getMinutes();
+        document.getElementById("sunrise_result").innerHTML=sunrise_hrs+":"+sunrise_min;
+    })
+    .catch(error => {
+        console.error("API error:", error);
+    });
+
+}

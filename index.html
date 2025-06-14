@@ -24,9 +24,9 @@
         
       <div class="container_A_sub">
         <div class="container_A_sub_A">
-          <h1 class="place">Place</h1>
-          <p class="chance_of_rain">Feels alike</p>
-          <h1 class="temp">31<sup>o</sup></h1>
+          <h1 class="place" id="place_name">Patna</h1>
+          <p class="chance_of_rain" id="feels_alike">Feels a like 40<sup>o</sup>C</p>
+          <h1 class="temp" id="original_temp">31<sup>o</sup>C</h1>
         </div>
         <div class="container_A_sub_B">
           <img src="src/clear-day.svg" alt="display status">
@@ -41,23 +41,23 @@
           <div class="forecast_B_section">
             <div class="forecast_B_section_day">
               <img src="src/min_temp.svg" alt="display status" class="img_status">
-              <h6>27</h6>
+              <h6 id="min_temp">31<sup>o</sup>C</h6>
               <p>Min. Temp</p>
               
             </div>
             <div class="forecast_B_section_night">
               <img src="src/max_temp.svg" alt="display status" class="img_status">
-              <h6>27</h6>
+              <h6 id="max_temp">31<sup>o</sup>C</h6>
               <p>Max Temp</p>
             </div>
             <div class="forecast_B_section_even">
               <img src="src/sea_level.svg" alt="display status" class="img_status">
-              <h6>27</h6>
+              <h6 id="sea_level">2700 hPa</h6>
               <p>Sea Level</p>
             </div>
             <div class="forecast_B_section_morn">
               <img src="src/else.svg" alt="display status" class="img_status">
-              <h6>27</h6>
+              <h6 id="ground_level">3000 hPa</h6>
               <p>Ground Level</p>
             </div>
           </div>
@@ -67,7 +67,7 @@
 
       <div class="quote">
         <h5>Quotes</h5>
-        <p class="quote_result">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo repellat perspiciatis a blanditiis. Corrupti, voluptate?</p>
+        <p class="quote_result" id="quote_result">The sun after the rain is much more beautiful than the sun before the rain. — Mehmet Murat İldan</p>
       </div>
       
     </div>
@@ -76,7 +76,7 @@
         <div class="sunrise">
           <div class="sunrise_subb">
             <h3>sunrise</h3>
-            <p>5:30</p>
+            <p class="sunrise_result">5:30</p>
           </div>
           <div class="sunrise_suba">
             <!-- <img src="weather icons/day.svg" alt="display status" class="img_status"> -->
