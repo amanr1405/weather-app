@@ -36,7 +36,7 @@ function locate(){
         //display min_temp
         var min_temp = parseFloat(weather_data.main.temp_min);
         var min_temp_res = temp-273;
-        document.getElementById("max_temp").innerHTML=min_temp_res.toFixed(1)+"<sup>o</sup>C";
+        document.getElementById("min_temp").innerHTML=min_temp_res.toFixed(1)+"<sup>o</sup>C";
 
         //display sea_level
         document.getElementById("sea_level").innerHTML=weather_data.main.sea_level+" hPa";
@@ -52,10 +52,37 @@ function locate(){
         const sunrise=weather_data.sys.sunrise;
         
         const sunrise_date = new Date(sunrise * 1000);
-        console.log(sunrise_data);
-        const sunrise_hrs = sunrise_date.getHours();
-        const sunrise_min = sunrise_date.getMinutes();
-        document.getElementById("sunrise_result").innerHTML=sunrise_hrs+":"+sunrise_min;
+        const sunrise_time = sunrise_date.toLocaleTimeString("en-IN", {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+        });
+        document.getElementById("sunrise_result").innerHTML = sunrise_time;
+
+        //display sunset
+        const sunset=weather_data.sys.sunset;
+        
+        const sunset_date = new Date(sunset * 1000);
+        const sunset_time = sunset_date.toLocaleTimeString("en-IN", {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+        });
+        document.getElementById("sunset_result").innerHTML = sunset_time;
+
+        //air conditions
+        //real feel
+        document.getElementById("real_feel").innerHTML = temp_result.toFixed(1)+"<sup>o</sup>C";
+
+        //wind Speed
+        document.getElementById("wind_speed").innerHTML = weather_data.wind.speed+" m/s";
+
+        //mositure conditions
+        //humidity
+        document.getElementById("humidity").innerHTML = weather_data.main.humidity+"%";
+
+        //pressure
+        document.getElementById("pressure").innerHTML = weather_data.main.pressure+" hPa";
     })
     .catch(error => {
         console.error("API error:", error);
