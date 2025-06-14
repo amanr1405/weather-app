@@ -165,11 +165,12 @@ a:hover{
     height: 150px;
     background: url(src/sunrise.jpg);
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
     border-radius: 20px;
     background-repeat: no-repeat;
     display: flex;
     padding: 10px;
+    align-items: center;
 }
 
 .sunset{
@@ -177,11 +178,12 @@ a:hover{
     height: 150px;
     background: url(src/sunset.jpg);
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
     border-radius: 20px;
     background-repeat: no-repeat;
     display: flex;
     padding: 10px;
+    align-items: center;
 }
 
 .sunrise_suba, .sunset_suba{
@@ -192,6 +194,11 @@ a:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 30px;
+    height: 20%;
+    border-radius: 15px;
+    background-color: #0b131e;
+    border: 2px solid #202b3b;
 }
 
 hr{
