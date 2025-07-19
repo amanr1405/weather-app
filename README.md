@@ -2,7 +2,7 @@
 
 A sleek, fully responsive **Weather Application** built with **HTML**, **CSS**, **JavaScript**, and **OpenWeatherMap API**. It displays detailed weather information including temperature, sunrise & sunset, pressure, wind speed, and more — based on user input or location.
 
-🔗 **Live Demo:** [View Project]([https://weather-app-psi-ten-11.vercel.app/])
+🔗 **Live Demo:** [View Project](https://weather-app-psi-ten-11.vercel.app/)
 
 ---
 
